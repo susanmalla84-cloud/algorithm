@@ -1,0 +1,31 @@
+// helps you to find peak element with binary search //
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+  int peak[]={1,2,3,8,6,3,2,1};
+int start=0;
+int end =7;
+int mid=-1 ;
+while ( start <= end )
+{
+    mid = start + ( end -start  )/2;
+    if( peak[mid -1]< peak[mid] > peak[mid+1] )
+    {
+        cout <<  peak[mid];
+        break ;
+    }
+    if ( peak[mid-1]< peak[mid ])
+    {
+        start = mid + 1; 
+    }
+    if (peak[mid +1]< peak[mid])
+    
+    {
+        end = mid - 1;
+}
+    
+}
+cout << peak[mid];
+return 0;
+}
