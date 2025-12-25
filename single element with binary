@@ -1,0 +1,45 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int single[]={1,1,2,2,3,3,4,4,5,6,6};
+   int  start = 0; 
+   int  end = 10;
+   int  mid = -1;
+    while ( start <= end)
+    {
+        mid =start+(end-start)/2;
+    if (single[mid-1 ] !=single[mid] && single[mid] !=single[mid+1])
+    {
+        cout<< single[mid];
+        break;
+    }
+    if ( mid %2==0)
+    {
+        if ( single[mid -1]== single[mid])
+        {
+            end = mid-1;
+        }
+        if( single[mid]==single[mid+1])
+        {
+            start =mid +1; 
+        }
+    }
+    if ( mid%2!=0)
+    {
+        if ( single[mid]==single[mid-1])
+        {
+            start = mid+ 1;
+        }
+        if ( single[mid]==single[mid+1])
+        
+        {
+            end =mid - 1;
+        }
+    }
+    }
+
+    return 0;
+}
