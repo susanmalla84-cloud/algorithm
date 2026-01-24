@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std; 
+int main ()
+{
+   
+   int mat[4][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+   int st =0; 
+   int end= 3;
+   int mid= -1; 
+   int tar= 1 ;
+   while ( st <=end)
+   {
+       mid = st + ( end -st)/2;
+       if ( mat[mid][0] <=  tar &&  tar <=mat[mid][3]  )
+       
+       {
+          cout <<mid; 
+          break;
+        }
+         if ( tar < mat[mid][0])
+         {
+            st = mid -1; 
+         }
+         if ( tar  >  mat[mid][3])
+         {
+            st = mid  + 1; 
+         }
+         else {
+            cout << " not vlaid ";
+            break;
+         }
+
+   }
+    int row = mat[mid][0]; 
+    int row2 = mat[mid ][3];
+    st = 0; 
+    end =3; 
+     int mid1 =-1;
+    while ( st <= end)
+    {
+   
+      mid1= st + ( end -st)/2;
+      {
+         if ( tar == mat[mid][mid1] )
+         {
+            cout << mid1;
+            break;
+         }
+         if ( tar < mat[mid][mid1] )
+         {
+            end = mid1 -1; 
+         }
+         if ( tar > mat[mid][mid1])
+         {
+            st= mid1 + 1; 
+         }
+      }
+    }
+
+}
