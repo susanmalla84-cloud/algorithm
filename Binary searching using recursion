@@ -1,0 +1,32 @@
+#include<iostream>
+#include<vector>
+
+int bs (int arr[], int tar , int s ,int e )
+{
+
+   int mid = -1 ;
+   mid = s + ( e - s )/2;    //  BINARY SEARCHING USING RECURSION  //
+   if ( arr[mid]== tar)
+   {
+    return  mid; 
+   }
+   if ( arr[mid]< tar)
+   {
+        return bs(arr,tar,mid+1,e);
+   }
+   if ( arr[mid]> tar)
+   {
+        return bs(arr,tar,s,mid-1);
+   }
+   return 0; 
+  }
+   int main ()
+   {
+       int arr[6]={1,2,3,4,5,6};
+       int s= 0; 
+       int end = 5; 
+       int tar = 3; 
+       printf(" enter vlaue is %d\n",tar);
+       printf(" the value is in index %d\n",bs(arr,tar,s, end));
+      
+   }
